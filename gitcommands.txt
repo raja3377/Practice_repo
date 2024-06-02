@@ -1,0 +1,323 @@
+git init (to intilize empty repo)
+
+git config --global user.name ""
+git config --global user.email ""
+
+git config --list
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+=================================
+touch file1
+ls
+git status
+git add file1
+git status
+git commit -m "sample commit" file1
+git status
+git log
+git show
+git show cid
+--------------------
+touch file2 file3 file4 file5
+ls
+git status
+git add .
+or
+git add *
+or
+git add -A
+or
+git add file3 file5
+
+git status
+git commit -m "label"
+git status
+git log
+============================
+
+git clone
+ls
+cd batch92
+touch file1
+ls
+git status
+git add file1
+git status
+git commit -m "sample commit" file1
+git status
+git log
+git show
+git show cid
+git push
+
+rm file1  (to delete a file)
+
+mkdir dir1
+
+cd dir1
+touch f1 f2 f3
+cd ..
+
+or
+
+touch dir1/f1
+touch dir1/f2
+
+git status
+
+git add dir1/f2
+
+-------------
+cd dir1
+ls
+rm f2
+cd ..
+git status
+
+
+======================
+Touch, Cat, VI
+===============
+Touch
+-----
+touch file1
+touch file2 file3 file4
+
+CAT
+===
+cat > file5
+......
+......
+ctrl+d
+
+cat file5
+
+cat >> file5
+....
+....
+ctrl+d
+
+VI
+==
+vi file6
+---------
+esc i
+.......
+.......
+.......
+
+esc :w!
+    :q!
+or
+esc :wq!
+================================================
+
+git clone 
+ls
+cd batch92
+touch prasad
+ls
+git status
+git add prasad
+git status
+git commit -m "sample commit"
+git status
+git log
+git show
+git show cid
+git push
+git pull --rebase
+git push
+git pull --rebase
+git push
+
+===================
+git branch
+git branch release1
+git branch
+git checkout release1
+
+git merge branch-name
+
+git branch -d release1  (to delete branch in local)
+
+git checkout -b release2  (to create branch and checkout at a time)
+
+git push origin release1 (to upload branch into c-repo)
+or
+git push path/of/c-repo release1
+
+git push origin -d release1  (to delete branch in c-repo)
+
+
+Alias
+=====
+git status
+git config --global alias.s "status"
+git s
+
+git config --list
+git config --global alias.cl "config --list"
+git cl
+
+git commit -m "test-commit"
+git config --global alias.cmt "commit -m "test-commit""
+git cmt
+
+git config --global --unset alias.cmt  (to remove alias)
+
+conflicts
+---------
+git merge --abort
+
+
+i:wi:
+
+
+git log --since=2017-03-03
+or
+git log --after=yy-mm-dd
+
+git log --until=yy-mm-dd
+or
+git log --before=yy-mm-dd
+
+git log --since=yy-mm-dd --until=yy-mm-dd
+or
+git log --after=yy-mm-dd --before=yy-mm-dd
+
+git log --after="yy-mm-dd 23:00" --before="yy-mm-dd 23:00"
+
+git log -- file file-name (i will show who created file name) 
+git log --grep "label"
+
+git commit -m "label"
+git commit -m "label1" -m "label2" -m "label3"
+
+
+
+==============
+stash
+=====
+git stash save "stash1"
+git stash list
+
+git stash show stash@{x}
+git stash show -p stash@{x}git 
+
+pop - cut
+==========
+git stash pop
+git stash pop stash@{x}
+
+apply - copy
+=============
+git stash apply
+git stash apply stash@{x}
+
+drop - delete
+=============
+git stash drop
+git stash drop stash@{x}
+
+Tags
+====
+git tag
+git tag T-1.0
+git show T-1.0
+
+git tag T1.0 cid    // commit id 
+git checkout T1.0
+
+git push origin T1.0
+git push --tags (all tag)
+
+git tag -d T1.0  (delete on local)
+git push origin -d T1.0 (delete on central repo)
+
+git add file1  (workspace to staging)
+git reset head file1  (staging to workspace)
+
+git commit -m "sample commit" (staging to local)
+git reset --soft cid (local to staging n-1)
+
+git reset --mixed cid  (local to workspace)
+
+git reset --hard cid  (delete commit and committed files)
+     -
+.gitignore  // to ignore the files 
+==========
+test1
+test2
+
+
+cherry-pick //instead of merging from one branch to other branch and want a specific file then we use cherrypick "f1 and f2  in main file and R1 needs only f2 then we do cherry pick)
+------------
+git cherry-pick cid
+
+merge vs rebase
+===============
+git merge main
+git rebase main
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+git pull --rebase
+
+amend  existing commitID ki we can commit.for eg, we forgot to aDD SOME DATA TO ONE COMMIT SO WE CAN US ETHIS AMMEND AND COMMIT WITH THE SAME ID.
+-----
+git commit --amend -m "label"
+
+diff
+----
+git diff f1 f2 it shows us different b/w two 0
+ 
+
+fork
+====
+
+revert
+------
+git revert cid (if we want to change any data after commiting and pushing to central repo to bring back original data we will use give this command)
+
+fetch
+=====
+git fetch this will pull data and store that data in local origin 
+git pull = git fetch + git merge
+git merge origin/main
+git branch -r (to list remote branch)
+or
+git branch -a
+
+git fetch central repo changes 
+
+
+
+-------------------------------------------------
+
+Build tools
+
+To generate the executable files. .exe, .msi, .xml, .jar, .war
+
+Maven, Graddle, Ant, Apache
+
+Maven is a build tool and also project management tool.
+
+Maven download - Pre requisites- Java file is must, jdk 1.5 to 17. standard jdk11  we need to setup the environment variables.
+
+Maven download environment variables
+
+3 repo is in Maven 
+1. Remote
+2. Central 
+3. Local  mvn archetype:generate
+
+
+Application servers - Tomcat, JBOSS, WEBLOGIC
+
+
+
+
+
+
+
